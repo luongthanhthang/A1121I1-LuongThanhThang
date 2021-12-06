@@ -1,0 +1,3 @@
+- Mô tả cú pháp: git clone https://github.com/codegym-vn/wf-hello.git
+
+- Ý nghĩa của câu lệnh clone: sao chép một remote repository có sẵn trên github về local repository là máy của mình

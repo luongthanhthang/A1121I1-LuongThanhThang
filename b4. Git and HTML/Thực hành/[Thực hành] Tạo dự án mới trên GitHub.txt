@@ -1,0 +1,11 @@
+- git init: khởi tạo một repository 
+
+- git remote add origin https://github.com/luongthanhthang/my-new-project.git : dùng để liên kết remote repository và local repository với nhau
+
+- git add README.md : đưa file REAME.md.txt lên trang Git
+
+- git commit -m"Add README.md file" :ghi chú lại là mình đã gửi file README.md lên, -m ở đây có nghĩa là 'message'
+
+- git push origin master : để đẩy những thay đổi từ local repository lên remote repository
+
+- Link git mới tạo: https://github.com/luongthanhthang/my-new-project
