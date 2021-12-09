@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo form cơ bản</title>
+    <style>
+        .doiFormChu{font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;}
+    </style>
+</head>
+<body>
+<form action="simpleform.html" method="get" class="doiFormChu">
+<h1>Order Form</h1>
+    <p>What would you like to buy?</p>
+    <select>
+        <option value="  ">A </option>
+        <option> B (+0.5$) </option>
+        <option> C (+0.5$)</option>
+    </select>
+    <p>How many would you like to order?</p>
+    <input type="radio" name="rd" id="10do"/> <label for="10do">1-$10</label>
+    <br> <input type="radio" name="rd" id="20do"/> <label for="20do">2-$20</label>
+    <br> <input type="radio" name="rd" id="25do"/> <label for="25do">3-$25</label>
+    <p>Name<span style="color: red">*</span></p>
+    <input type="text" name="firstname" placeholder="FirstName" size="15"/>
+    <input type="text" name="lastname" placeholder="LastName" size="15"/>
+    <p> Email</p>
+    <input type="text" name="email" size="35"/>
+    <p>PhoneNumber</p>
+    <input type="text" name="phone 1" size="5"> -
+    <input type="text" name="phone 2" size="5"> -
+    <input type="text" name="phone 3" size="5">
+    <br> <br> <input type="submit" name="submit" value="submit">
+</form>
+</body>
+</html>
