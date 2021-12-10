@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form đơn giản phần 2</title>
+</head>
+<body>
+<form action="https://www.google.com/search" method="get">
+    <table style="background: lemonchiffon;width: 30% ">
+        <tr>
+            <th align="right" colspan="3" >
+                <h3 style="background: #8dff7c; color: blue" align="left">ĐĂNG KÍ HỌC VIÊN</h3>
+            </th>
+        </tr>
+
+        <tr>
+            <td style="color: blue">Họ và tên</td>
+            <td colspan="2"> <input type="text" size="30px"> </td>
+        </tr>
+
+        <tr>
+            <td style="color: blue">Ngày sinh</td>
+            <td colspan="2"> <input type="text" size="15px"> </td>
+        </tr>
+
+        <tr>
+            <td style="color: blue">Giới tính</td>
+            <td> <input type="radio" name="gioitinh" id="nam"> <label for="nam">Nam</label>
+                <input type="radio" name="gioitinh" id="nu" > <label for="nu">Nữ</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="color: blue">Địa chỉ</td>
+            <td> <textarea rows="3" cols="20"></textarea> </td>
+        </tr>
+
+        <tr>
+            <td style="color: blue">Lớp</td>
+            <td colspan="2" align="left"> <select>
+                <option>--Chợn lớp--</option>
+                <option>Lớp 1</option>
+                <option>Lớp 2</option>
+                <option>Lớp 3</option>
+                <option>Lớp 4</option>
+                <option>Lớp 5</option>
+            </select> </td>
+        </tr>
+
+        <tr>
+            <td style="color: blue">Email</td>
+            <td colspan="2"> <input type="text" size="20px"> </td>
+        </tr>
+
+        <tr>
+            <td style="color: blue" rowspan="2">Điện thoại</td>
+            <td colspan="2"> <input type="text" size="20px"> </td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Đăng kí">
+             <input type="reset" value="Nhập lại"> </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
