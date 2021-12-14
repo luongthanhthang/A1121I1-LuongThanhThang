@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+</head>
+<body>
+<h1>Calculator</h1>
+    <input type="text" id="giaTriDau">
+    <input type="text" id="giaTriSau">
+    <br><br>
+    <button onclick="addition()">Addition(+)</button>
+    <button onclick="subtraction()">Subtraction(-)</button>
+    <button onclick="multiplication()">Multiplication(X)</button>
+    <button onclick="division()">Division(/)</button>
+    <p id="result"></p>
+</body>
+</html>
+
+<script>
+    function addition() {
+    let a=document.getElementById("giaTriDau").value;
+    let b=document.getElementById("giaTriSau").value;
+    let c=parseInt(a)+parseInt(b);
+    document.getElementById("result").innerText="Result Addition: "+c;
+    }
+
+    function subtraction(){
+        let a=document.getElementById("giaTriDau").value;
+        let b=document.getElementById("giaTriSau").value;
+        let c=parseInt(a)-parseInt(b);
+        document.getElementById("result").innerText="Result Subtraction: "+c;
+    }
+
+    function multiplication(){
+        let a=document.getElementById("giaTriDau").value;
+        let b=document.getElementById("giaTriSau").value;
+        let c=parseInt(a)*parseInt(b);
+        document.getElementById("result").innerText="Result Multiplication: "+c;
+    }
+
+    function division(){
+        let a=document.getElementById("giaTriDau").value;
+        let b=document.getElementById("giaTriSau").value;
+        let c=parseInt(a)/parseInt(b);
+        document.getElementById("result").innerText="Result Division: "+c;
+    }
+</script>

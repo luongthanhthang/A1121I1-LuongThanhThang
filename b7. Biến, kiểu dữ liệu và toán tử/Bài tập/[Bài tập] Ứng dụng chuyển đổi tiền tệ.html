@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đổi tiền tệ</title>
+</head>
+<body>
+    <table width="50%">
+
+        <tr>
+            <th align="left">Amount</th>
+            <th align="left">From Currency</th>
+            <th align="left">To Currency</th>
+
+        </tr>
+
+        <tr>
+            <td> <input type="text" value="" id="SoTien"> </td>
+
+            <td> <select id="tienChuaChuyenDoi">
+                <option value="1">VietNam</option>
+                <option value="23000">USD</option>
+                <option value="26000">Euro</option>
+
+            </select></td>
+
+            <td> <select id="tienSauKhiChuyenDoi">
+                <option value="23000">USD</option>
+                <option value="1">VietNam</option>
+                <option value="26000">Euro</option>
+            </select> </td>
+
+            <td> <button onclick="hienSoTienSauChuyenDoi()" style="background-color: blueviolet"> <strong style="color: white">Convert</strong></button> </td>
+        </tr>
+
+    </table>
+    <span style="color: blue" id="ketQua">Result</span>
+
+</body>
+</html>
+
+<script>
+    function hienSoTienSauChuyenDoi(){
+        let a=document.getElementById('SoTien').value;
+        let b=document.getElementById('tienChuaChuyenDoi').value;
+        let c=document.getElementById('tienSauKhiChuyenDoi').value;
+        let soTien=(parseInt(a)*parseInt(b))/parseInt(c);
+        document.getElementById("ketQua").innerHTML='<span style="color: blue" id="ketQua">Result :</span>'+soTien;
+    }
+</script>
