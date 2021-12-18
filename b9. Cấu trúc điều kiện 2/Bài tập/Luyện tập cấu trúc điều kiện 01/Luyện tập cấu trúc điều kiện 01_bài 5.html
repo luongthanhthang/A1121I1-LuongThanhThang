@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let diemBaiKiemTra=parseFloat(prompt('nhập số điểm bài kiểm tra: '));
+    let diemGiuaKi=parseFloat(prompt('nhập số điểm thi giữa kì: '));
+    let diemCuoiKi=parseFloat(prompt('nhập số điểm thi cuối kì: '));
+    let trungBinhMon=diemBaiKiemTra*0.2+diemGiuaKi*0.2+diemCuoiKi*0.6;
+    if(trungBinhMon>=8.5) {
+        alert('Bạn xếp loại Giỏi');
+    } else if(trungBinhMon>=7) {
+        alert('Bạn xếp loại Khá');
+    } else if(trungBinhMon>=4) {
+        alert('Bạn xếp loại Trung bình');
+    } else {
+        alert('Bạn xếp loại yếu');
+    }
+</script>

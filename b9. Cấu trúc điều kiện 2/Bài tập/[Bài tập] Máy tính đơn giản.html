@@ -3,22 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>máy tính đơn giản</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            padding: 20px;
+        }
+        button{
+            height: 40px;
+            width: 40px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-
-<div id="hienThi" ></div>
+<span id="hienThi"></span>
 <br>
-       <button onclick="getValue(1)">1</button> &nbsp;&nbsp;
-       <button onclick="getValue(2)">2</button>&nbsp;&nbsp;
-       <button onclick="getValue(3)">3</button>&nbsp;&nbsp;
-       <button onclick="getValue(+)">+</button>
+<table>
+
+    <tr>
+        <td><button onclick="getValue(1)">1</button> </td>
+        <td><button onclick="getValue(2)">2</button></td>
+        <td><button onclick="getValue(3)">3</button></td>
+        <td><button onclick="getValue('+')">+</button></td>
+    </tr>
+
+    <tr>
+        <td><button onclick="getValue(4)">4</button> </td>
+        <td><button onclick="getValue(5)">5</button></td>
+        <td><button onclick="getValue(6)">6</button></td>
+        <td><button onclick="getValue('-')">-</button></td>
+    </tr>
+
+    <tr>
+        <td><button onclick="getValue(7)">7</button> </td>
+        <td><button onclick="getValue(8)">8</button></td>
+        <td><button onclick="getValue(9)">9</button></td>
+        <td><button onclick="getValue('*')">x</button></td>
+    </tr>
+
+    <tr>
+        <td><button onclick="reset()">C</button> </td>
+        <td><button onclick="getValue(0)">0</button></td>
+        <td><button onclick="tinhToan()">=</button></td>
+        <td><button onclick="getValue('/')">/</button></td>
+    </tr>
+</table>
 </body>
 </html>
 <script>
  function getValue(number) {
-     console.log(number);
      let result=document.getElementById('hienThi').innerText;
      result=result+number;
     document.getElementById('hienThi').innerText=result;
  }
+  function reset() {
+     document.getElementById('hienThi').innerText='';
+  }
+  function tinhToan() {
+      let result=document.getElementById('hienThi').innerText;
+     document.getElementById('hienThi').innerText= eval(result);
+  }
 </script>

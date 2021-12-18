@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    a=parseFloat(prompt('nhập số a trong phương trình bậc 1 ax+b=0'));
+    b=parseFloat(prompt('nhập số b trong phương trình bậc 1 ax+b=0'));
+    if(a==0) {
+        if(b==0) {
+            alert('phương trình có vô số nghiệm');
+        } else {
+            alert(' phương trình vô nghiệm')
+        }
+    } else {
+        x=-b/a;
+        alert('phương trình có nghiệm duy nhất là: ' +x);
+    }
+</script>

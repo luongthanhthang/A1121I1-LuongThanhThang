@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let a=parseFloat(prompt('nhập số a trong phương trình bậc 1 ax^2+bx+c=0'));
+    let b=parseFloat(prompt('nhập số b trong phương trình bậc 1 ax^2+bx+c=0'));
+    let c=parseFloat(prompt('nhập số c trong phương trình bậc 1 ax^2+bx+c=0'));
+    if(a==0){
+        if(b==0) {
+            if(c==0){
+                alert('Phương trình có vô số nghiệm');
+            } else {
+                alert('Phương trình vô nghiệm');
+            }
+        } else {
+            x=-c/b;
+            alert('Phương trình có 1 nghiệm duy nhất x= '+x);
+        }
+    } else{
+        delta=Math.pow(b,2)-4*a*c;
+        if(delta<0) {
+            alert('Phương trình vô nghiệm');
+        }
+        if(delta==0) {
+            x=-b/(2*a);
+            alert('Phương trình có nghiệm trùng x1=x2=x= '+x);
+        }
+        if(delta>0){
+            x1=(-b+Math.sqrt(delta))/(2*a);
+            x2=(-b-Math.sqrt(delta))/(2*a);
+            alert('Phương trình có 2 nghiệm là x1: '+x1 +' x2 là: '+x2);
+        }
+    }
+</script>

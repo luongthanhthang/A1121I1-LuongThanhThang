@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let doanhSoBanHang=parseFloat(prompt('nhập doanh số bán hàng lớn hơn 0'));
+    if (doanhSoBanHang>=10) {
+         hoaHong=(doanhSoBanHang/100)*20;
+    } else if(doanhSoBanHang>=5) {
+         hoaHong=(doanhSoBanHang/100)*15;
+    } else {
+         hoaHong=(doanhSoBanHang/100)*5;
+    }
+    alert('só tiền hoa hồng nhận được là: '+ hoaHong);
+
+</script>
