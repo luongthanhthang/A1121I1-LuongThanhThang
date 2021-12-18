@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sử dụng chuột</title>
+</head>
+<body>
+<form>
+    <img id="myImage" src="https://assets.adidas.com/images/w_600,f_auto,q_auto/c98dada6ff8947d48720ad1101593726_9366/UCL_League_Pyrostorm_Ball_White_GT7788.jpg">
+    <p>Click button below to move the image to right/left</p>
+    <input onclick="moveLeft()" type="button" value="moveLeft">
+    <input onclick="moveRight()" type="button" value="moveRight">
+
+</form>
+</body>
+</html>
+<script>
+    let imgObj=null;
+    imgObj=document.getElementById('myImage');
+    function init() {
+        imgObj=document.getElementById('myImage');
+        imgObj.style.position='relative';
+        imgObj.style.left='0px';
+    }
+    function moveRight() {
+        imgObj.style.left=parseInt(imgObj.style.left)+10+'px';
+    }
+    function moveLeft(){
+        imgObj.style.left=parseInt(imgObj.style.left)-10+'px';
+    }
+    window.onload=init;
+</script>

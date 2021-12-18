@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>máy tính đơn giản</title>
+</head>
+<body>
+
+<div id="hienThi" ></div>
+<br>
+       <button onclick="getValue(1)">1</button> &nbsp;&nbsp;
+       <button onclick="getValue(2)">2</button>&nbsp;&nbsp;
+       <button onclick="getValue(3)">3</button>&nbsp;&nbsp;
+       <button onclick="getValue(+)">+</button>
+</body>
+</html>
+<script>
+ function getValue(number) {
+     console.log(number);
+     let result=document.getElementById('hienThi').innerText;
+     result=result+number;
+    document.getElementById('hienThi').innerText=result;
+ }
+</script>
