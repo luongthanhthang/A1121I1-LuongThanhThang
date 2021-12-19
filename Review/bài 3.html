@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1>Thêm thẻ HTML</h1>
+<input id="hienThi" type="text">
+<button onclick="themThe()" type="button">Add</button>
+<br>
+<button id="themThe" style="display: none"></button>
+</body>
+</html>
+<script>
+    function themThe(){
+        let nhap=document.getElementById('hienThi').value;
+        if(nhap===""){
+            alert('Bạn chưa nhập nội dung');
+        } else {
+            document.getElementById('themThe').style.display='block';
+            document.getElementById('themThe').innerText=nhap;
+        }
+    }
+
+
+</script>

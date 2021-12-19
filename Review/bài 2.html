@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            background-color: blue;
+            color: white;
+            font-size: 15px;
+            width: 300px;
+            height: 45px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Thay đổi nội dung của thẻ HTML</h1>
+<p id="thayDoi">Thời tiết hôm nay thế nào</p>
+<button onclick="troiNang()">trời nắng</button>
+<button onclick="troiMua()">trời mưa</button>
+</body>
+</html>
+<script>
+    function troiNang() {
+        document.getElementById('thayDoi').innerText='Hôm nay trời nắng đẹp';
+    }
+    function troiMua() {
+        document.getElementById('thayDoi').innerText='Hôm nay trời mưa ngâu'
+    }
+</script>
