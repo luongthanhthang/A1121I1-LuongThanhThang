@@ -12,5 +12,7 @@
     let soTienBanDau=parseFloat(prompt('Nhập số tiền ban đầu: '));
     let soThang=parseFloat(prompt('Nhập số tháng: '));
     let laiSuatHangThang=parseFloat(prompt('Nhập lãi suất hằng tháng: '));
-
+    soTienThuDuoc=soTienBanDau*(Math.pow((1+laiSuatHangThang/100),soThang));
+    tienLai=soTienThuDuoc-soTienBanDau;
+    alert('lãi suất thu được sau khi gửi '+soThang+' tháng là: '+tienLai+' VND');
 </script>
