@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>good-fast-cheap</title>
+    <style>
+        input{
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td><span>Good</span></td>
+        <td><input onclick="range('good')" id="good" type="range" min="0" max="1"value="0"></td>
+    </tr>
+
+    <tr>
+        <td><span>Fast</span></td>
+        <td><input onclick="range('fast')" id="fast" type="range" min="0" max="1"value="0"></td>
+    </tr>
+
+    <tr>
+        <td><span>Cheap</span></td>
+        <td><input onclick="range('cheap')" id="cheap" type="range" min="0" max="1"value="0"></td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    let valueGood=document.getElementById('good');
+    let valueFast=document.getElementById('fast');
+    let valueCheap=document.getElementById('cheap');
+    console.log(valueGood);
+function range(value) {
+    switch (value) {
+        case 'good':
+            if(valueFast.value==1){
+                valueCheap.value=0;
+            }
+            break;
+
+        case 'fast':
+            if(valueGood.value==1){
+                valueCheap.value=0;
+            }
+            break;
+
+        case 'cheap':
+            if(valueFast.value==1){
+                valueGood.value=0;
+            }
+            break;
+    }
+}
+</script>
+

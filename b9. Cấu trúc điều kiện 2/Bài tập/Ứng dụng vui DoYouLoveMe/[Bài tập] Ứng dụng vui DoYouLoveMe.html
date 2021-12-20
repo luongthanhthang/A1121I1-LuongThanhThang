@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me? </title>
+    <style>
+        body{
+            background-image: url("https://img.thuthuatphanmem.vn/uploads/2018/09/28/anh-nen-tinh-yeu-dep_025630876.jpg");
+        }
+        strong{
+            font-size: 50px;
+            color: firebrick;
+        }
+        span{
+            font-size: 50px;
+            color: red;
+        }
+        button{
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <table>
+        <tr>
+            <th colspan="2"><strong>Do you love me ?</strong></th>
+        </tr>
+
+        <tr>
+            <td><button onclick="yes()" id="yes" type="button" style="color: #7afa5a">Yes</button> </td>
+            <td><button onmouseover="no()" id="no" type="button" style="color: #d61b06; ">No</button> </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <span style="color: red" id="chu"></span>
+    <span  id="realLove"></span>
+</center>
+</body>
+</html>
+<script>
+    function yes() {
+        document.getElementById('realLove').innerHTML='<img src="anhDong.gif">';
+        document.getElementById('chu').innerText='Chọn đúng người rồi đó <3'
+    }
+
+    function no() {
+        let a=Math.random() * window.innerHeight;
+        let b=Math.random() * window.innerWidth;
+        document.getElementById('no').style.position='absolute'
+        document.getElementById("no").style.top=a+'px';
+        document.getElementById("no").style.left=b+'px';
+    }
+</script>

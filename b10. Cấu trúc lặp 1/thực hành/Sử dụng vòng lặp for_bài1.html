@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--Bài 1: Viết chương trình hiển thị chuỗi “The number is N” 5 lần sử dụng vòng lặp for. Với N sẽ hiển thị từ 0 đến 5.-->
+<body>
+<h2>Javascript Loops</h2>
+<p id="demo"></p>
+</body>
+</html>
+<script>
+    let i;
+    let text="";
+    for(i=0; i<6; i++) {
+        text += "The number is "+i+"<br>";
+        document.getElementById('demo').innerHTML=text;
+    }
+</script>
