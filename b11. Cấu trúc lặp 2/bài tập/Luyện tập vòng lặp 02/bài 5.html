@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, -->
+<!--    số tháng cho vay và lãi xuất hàng tháng.-->
+</head>
+<body>
+</body>
+</html>
+<script>
+    let money=parseFloat(prompt("Enter the initial money"));
+    let month=parseInt(prompt("Enter the month"));
+    let interestRate=parseFloat(prompt("Enter the Lãi suất/Tháng"));
+    let interest;
+    for(i=1; i<=month; i++){
+        interest=money*(interestRate/100);
+        money=money+interest;
+    }
+    alert("Số tiền bạn nhận được sau "+month+" Tháng với mức lãi suất "+interestRate+ " %/1tháng là: "+money);
+</script>

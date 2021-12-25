@@ -6,61 +6,84 @@
     <style>
         table{
             border-collapse: collapse;
-            padding: 20px;
+        }
+        td{
+            width: 100px;
+            height: 100px;
+            border: 1px solid#dddddd;
+            text-align: center;
+            font-size: large;
         }
         button{
-            height: 40px;
-            width: 40px;
-            font-size: 20px;
+            width: 100px;
+            height:100px;
+            color: blue;
+            font-size: large;
         }
     </style>
 </head>
 <body>
-<span id="hienThi"></span>
-<br>
 <table>
-
     <tr>
-        <td><button onclick="getValue(1)">1</button> </td>
-        <td><button onclick="getValue(2)">2</button></td>
-        <td><button onclick="getValue(3)">3</button></td>
-        <td><button onclick="getValue('+')">+</button></td>
+        <td colspan="4" style="border: 1px solid; text-align: right; font-size: 30px"> <p id="result" style="color: blue"></p></td>
     </tr>
 
     <tr>
-        <td><button onclick="getValue(4)">4</button> </td>
-        <td><button onclick="getValue(5)">5</button></td>
-        <td><button onclick="getValue(6)">6</button></td>
-        <td><button onclick="getValue('-')">-</button></td>
+        <td><button onclick="pressNumber('1')">1</button></td>
+        <td><button onclick="pressNumber('2')">2</button></td>
+        <td><button onclick="pressNumber('3')">3</button></td>
+        <td><button onclick="pressOperator('+')">+</button></td>
     </tr>
 
     <tr>
-        <td><button onclick="getValue(7)">7</button> </td>
-        <td><button onclick="getValue(8)">8</button></td>
-        <td><button onclick="getValue(9)">9</button></td>
-        <td><button onclick="getValue('*')">x</button></td>
+        <td><button onclick="pressNumber('4')">4</button></td>
+        <td><button onclick="pressNumber('5')">5</button></td>
+        <td><button onclick="pressNumber('6')">6</button></td>
+        <td><button onclick="pressOperator('-')">-</button></td>
     </tr>
 
     <tr>
-        <td><button onclick="reset()">C</button> </td>
-        <td><button onclick="getValue(0)">0</button></td>
-        <td><button onclick="tinhToan()">=</button></td>
-        <td><button onclick="getValue('/')">/</button></td>
+        <td><button onclick="pressNumber('7')">7</button></td>
+        <td><button onclick="pressNumber('8')">8</button></td>
+        <td><button onclick="pressNumber('9')">9</button></td>
+        <td><button onclick="pressOperator('*')">X</button></td>
+    </tr>
+
+    <tr>
+        <td><button onclick="reset()">C</button></td>
+        <td><button onclick="pressNumber('0')">0</button></td>
+        <td><button onclick="pressEqual()">=</button></td>
+        <td><button onclick="pressOperator('/')">/</button></td>
     </tr>
 </table>
 </body>
 </html>
 <script>
- function getValue(number) {
-     let result=document.getElementById('hienThi').innerText;
-     result=result+number;
-    document.getElementById('hienThi').innerText=result;
- }
-  function reset() {
-     document.getElementById('hienThi').innerText='';
-  }
-  function tinhToan() {
-      let result=document.getElementById('hienThi').innerText;
-     document.getElementById('hienThi').innerText= eval(result);
-  }
+    let result=0;
+    let resultDisplay=document.getElementById('result');
+    function pressNumber(num) {
+        if(resultDisplay ===''){
+            resultDisplay.innerHTML=num;
+        } else if(result===0) {
+            resultDisplay.innerHTML+=num;
+        } else {
+            resultDisplay.innerHTML=num;
+            result=0;
+        }
+    }
+
+    function pressOperator(operator) {
+        resultDisplay.innerHTML+=operator;
+        result=0;
+    }
+
+    function pressEqual() {
+        result=eval(resultDisplay.innerHTML);
+        resultDisplay.innerHTML=result;
+    }
+
+    function reset() {
+        resultDisplay.innerHTML="";
+        result=0;
+    }
 </script>

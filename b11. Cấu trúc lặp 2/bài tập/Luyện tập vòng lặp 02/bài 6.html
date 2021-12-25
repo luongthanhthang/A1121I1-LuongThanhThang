@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    Bài 6: In hình trái tim-->
+</head>
+<body>
+</body>
+</html>
+<script>
+    for(i=1; i<=3; i++) {
+        document.write("&nbsp;&nbsp;");
+        if(i==3) {
+            break;
+        }
+        document.write("**");
+    }
+    document.write("<br>");
+    document.write("*******"+"<br>");
+//     let loop="";
+//     let loop1="";
+//     let loop2="";
+//
+//    for(i=1; i<=3; i++) {
+//         for(j=3; j>i; j--) {
+//             loop1+="&nbsp;&nbsp";
+//         }
+//         for(j=1; j<=i; j++) {
+//             if(i==1) {
+//                 continue;
+//             }
+//             loop1+="*";
+//         }
+//         if(i==3){
+//             break;
+//         }
+//        loop1+="<br>";
+//     }
+// // ----------------------------------------
+//    for(i=1; i<=3; i++) {
+//        for (j=1; j<=i; j++) {
+//            if(i==1) {
+//                continue;
+//            }
+//            loop2 += "*";
+//        }
+//
+//        loop2 += "<br>";
+//    }
+//    loop=loop1+"&nbsp;"+loop2;
+//    document.write(loop);
+
+    // ----------------------------------------
+    for(i=1; i<=7; i+=2) {
+        for(j=1; j<i; j++){
+            document.write("&nbsp;")
+        }
+        for(j=7; j>=i; j--) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+</script>

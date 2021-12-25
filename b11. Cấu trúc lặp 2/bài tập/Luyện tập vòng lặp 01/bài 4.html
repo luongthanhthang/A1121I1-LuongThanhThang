@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.-->
+</body>
+</html>
+<script>
+    let F1=1, F2=1, F;
+    document.write(F1+"<br>");
+    document.write(F2+"<br>");
+    for(i=3; i<=20; i++) {
+        F = F1 + F2;
+        document.write(F + "<br>");
+        if(F%5==0) {
+            document.write( F+ " is first number divisible by 5 ");
+            break;
+        }
+        F1 = F2;
+        F2 = F;
+    }
+</script>

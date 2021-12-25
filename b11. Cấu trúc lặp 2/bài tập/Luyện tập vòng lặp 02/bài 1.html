@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    Bài 1: In dãy Finonaci-->
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let n =parseInt(prompt("Enter the quantity number in the Finonaci squence"));
+    let F1=1, F2=1, F;
+    if(n==1){
+        document.write(F1+"<br>");
+    } else {
+    document.write(F1+"<br>");
+    document.write(F2+"<br>");
+    for(i=3; i<=n; i++) {
+        F = F1 + F2;
+        document.write(F + "<br>");
+        F1 = F2;
+        F2 = F;
+    }
+    }
+</script>

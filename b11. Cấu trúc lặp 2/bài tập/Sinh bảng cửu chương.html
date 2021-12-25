@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bảng cửu chương</title>
+</head>
+<body>
+<h1>Bảng cửu chương</h1>
+</body>
+</html>
+<script>
+    let multiplicationTables="<table border='1px' cellspacing='0px' cellpadding='3px'>";
+    for(row=1; row<=9; row++) {
+        multiplicationTables+="<tr>";
+        for(col=2; col<=9; col++) {
+            multiplicationTables+="<td>";
+            result=row*col;
+            multiplicationTables+=col+"x"+row+"="+result;
+            multiplicationTables+="</td>";
+        }
+        multiplicationTables+="</tr>";
+    }
+    document.write(multiplicationTables);
+</script>
