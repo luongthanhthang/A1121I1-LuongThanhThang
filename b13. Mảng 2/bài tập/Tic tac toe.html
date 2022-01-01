@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game caro</title>
+</head>
+<body>
+<center>
+    <h1>Trò chơi caro</h1>
+    <input type="button" onclick="player1()" value="player1">
+    <input type="button" onclick="player2()" value="player2">
+    <p id="display"></p>
+    <p id="result"></p>
+</center>
+</body>
+</html>
+<script>
+    let data="";
+    let display=document.getElementById('display');
+    let board= new Array(3);
+    for(let row=0; row<3; row++) {
+        board[row]=new Array(3);
+               for (let col=0; col<3; col++) {
+            board[row][col]=".";
+        }
+    }
+
+    for(let row=0; row<3; row++) {
+        data+="<br>";
+        for(let col=0; col<3; col++) {
+            data+=board[row][col]+ " &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;";
+        }
+    }
+    display.innerHTML=data;
+
+
+    function player1() {
+        data="";
+        let x=prompt("Nhập toạ độ hàng bạn muốn điền X");
+        let y=prompt("Nhập toạ độ cột bạn muốn điền X");
+        board[x][y]="X";
+        for(let row=0; row<3; row++) {
+            data+="<br>";
+            for(let col=0; col<3; col++) {
+                data+=board[row][col]+ " &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;";
+            }
+        }
+        display.innerHTML=data;
+        setTimeout(result, 500);
+    }
+
+
+
+    function player2() {
+        data="";
+        let x=prompt("Nhập toạ độ hàng bạn muốn điền O");
+        let y=prompt("Nhập toạ độ cột bạn muốn điền O");
+        board[x][y]="O";
+        for(let row=0; row<3; row++) {
+            data+="<br>";
+            for(let col=0; col<3; col++) {
+                data+=board[row][col]+ " &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;";
+            }
+        }
+        display.innerHTML=data;
+        setTimeout(result, 500);
+    }
+
+    function result() {
+        for (row = 0; row < 3; row++) {
+            for (col = 0; col < 3; col++) {
+                if (col === 2) {
+                    if (board[row][col - 2] === board[row][col - 1] && board[row][col - 1] === board[row][col]) {
+                        if(board[row][col] === "X") {
+                            document.getElementById("result").innerText = "Congralulation Player 1 Win";
+                } else if(board[row][col] === "O") {
+                            document.getElementById("result").innerText = "Congralulation Player 2 Win";
+                        } else {
+                        document.getElementById("result").innerText="No Player win yet, keep to game";
+                        }
+                    }
+                    }
+            }
+        }
+    }
+
+    // Vẫn chưa biết viết sao để so sánh và suất kết quả.
+
+</script>

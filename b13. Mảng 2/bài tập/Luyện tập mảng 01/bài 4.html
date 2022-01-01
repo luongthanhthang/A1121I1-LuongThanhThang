@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<!--Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.-->
+<script>
+    let index=parseInt(prompt("enter the number of element of the array you need to import"));
+    let arr=new Array(index);
+    for (let i=0; i<arr.length; i++) {
+        arr[i]=parseInt(prompt("enter the element: arr["+i+"]"));
+    }
+    document.write( "Array before reverse"+arr+"<br>");
+    let reverseArr=arr.reverse();
+    document.write("Array after reverse "+reverseArr);
+</script>

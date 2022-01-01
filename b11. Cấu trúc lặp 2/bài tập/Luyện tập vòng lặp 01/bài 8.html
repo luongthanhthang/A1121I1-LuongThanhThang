@@ -30,15 +30,12 @@
 </body>
 </html>
 <script>
-    function getRandomBetweenMinMax(min, max) {
-        return (Math.random() * (max - min)) + min;
-    }
     function startGame() {
         let soLanNhap=1;
         let number;
         let valueMin=parseInt(prompt("Nhập số nhỏ nhất trong khoảng bạn muốn đoán"));
         let valueMax=parseInt(prompt("Nhập số lớn nhất trong khoảng bạn muốn đoán"));
-        let random= parseInt(getRandomBetweenMinMax(valueMin, valueMax));
+        let random= Math.floor(Math.random()*(valueMax-valueMin+1)+valueMin);
         number=parseInt(prompt("nhập số bạn đoán trong khoảng bạn đã chọn"));
         do {
             if(number>random) {

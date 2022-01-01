@@ -1,0 +1,26 @@
+<!--Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa. -->
+<!--Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+ let inputText=prompt("Mời nhập 1 chuỗi kí tự muốn đổi thường thành hoa, hoa thành thường");
+ let Arr=inputText.toString();
+ let result=[];
+ for(i=0; i<Arr.length; i++) {
+     if(Arr[i]===Arr[i].toLowerCase()) {
+         result.push(Arr[i].toUpperCase());
+     } else if(Arr[i]===Arr[i].toUpperCase()) {
+         result.push(Arr[i].toLowerCase());
+     } else {
+         result.push(Arr[i]);
+     }
+ }
+ alert("Ký tự sau khi được chuyển đổi chữ hoa thành thường, chữ thường thành chữ hoa là: "+result.join(""));
+</script>

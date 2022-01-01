@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<!--Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi-->
+<script>
+    let index=parseInt(prompt("enter the number of element of the array you need to import"));
+    let arr=new Array(index);
+    for (let i=0; i<arr.length; i++) {
+        arr[i]=parseFloat(prompt("enter the element: arr["+i+"]"));
+    }
+    document.write(arr+"<br>");
+    for (let i=0; i<arr.length; i++) {
+        if(arr[i]===parseInt(arr[i])) {
+            if(arr[i]<0) {
+                document.write("số nguyên âm là: "+arr[i]+"<br>");
+            }
+        }
+    }
+
+</script>

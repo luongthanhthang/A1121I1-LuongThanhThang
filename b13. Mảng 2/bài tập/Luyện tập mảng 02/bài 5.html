@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<!--Bài 5: Viết một chương trình nhập vào 2 chuỗi, -->
+<!--sau đó kiểm tra xem hai chuỗi có giống nhau hay không.-->
+<script>
+    // let string1=prompt("enter the string1: ");
+    // let string2=prompt("enter the string2: ");
+    // // let arr1=string1.split("");
+    // // let arr2=string2.split("");
+    // if(string1===string2){
+    //     alert("2 chuỗi bằng nhau");
+    // } else {
+    //     alert("2chuỗi khác nhau");
+    // }
+    let check=true;
+    let number="";
+    let myArr1="";
+    let myArr2="";
+    let index=parseInt(prompt("enter the number of element of array"));
+    let arr1= new Array(index);
+    let arr2= new Array(index);
+    for(let i=0; i<arr1.length; i++){
+        arr1[i]=prompt("enter of the element: arr1["+i+"]");
+        myArr1+=arr1[i] + " ";
+    }
+
+    for(let i=0; i<arr2.length; i++){
+        arr2[i]=prompt("enter of the element: arr2["+i+"]");
+        myArr2+=arr2[i] + " ";
+    }
+    document.write(myArr1+"<br>");
+    document.write(myArr2+"<br>");
+
+    for(let i=0; i<arr2.length; i++) {
+        if(arr1[i]!==arr2[i]) {
+            check=false;
+        }
+    }
+    if(check) {
+        alert("Two array identical ");
+    } else {
+        alert("Two array is not identical");
+    }
+</script>

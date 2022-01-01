@@ -1,0 +1,58 @@
+<!--Phát triển một ứng dụng từ điển đơn giản.-->
+<!--Ứng dụng cho phép tra cứu các từ tiếng Anh sang tiếng Việt. -->
+<!--Danh sách các từ được lưu trữ trong các mảng.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+    <style>
+        h2{
+            text-align: center;
+            color: #d61b06;
+        }
+        button{
+            width: 220px;
+            height: 50px;
+            font-size: 40px;
+            text-align: center;
+            position: absolute;
+            left: 43%;
+        }
+        input{
+            width: 500px;
+            height: 30px;
+            font-size: 20px;
+            position: absolute;
+            left: 35%;
+        }
+
+    </style>
+</head>
+<body>
+<h2>Enter the Number from 'one' to 'ten' translate from English to Vietnamese</h2>
+<br>
+<input type="text" id="english" name="input">
+<br>
+<br>
+<br>
+<button type="button" onclick="translate1()" >Translate</button>
+<br>
+<br>
+<br>
+<p id="result" style="position: absolute; left: 27%; font-size: 40px;"></p>
+</body>
+</html>
+<script>
+    function translate1() {
+        let vietnamese=['một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười'];
+        let english=['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+        let input=document.getElementById("english").value;
+        let check=english.indexOf(input);
+        if(check===-1) {
+            document.getElementById("result").innerText="không thể dịch được từ này, mời bạn nhập từ khác";
+        } else {
+            document.getElementById("result").innerText="từ: "+english[check]+" đã được dịch thành: "+vietnamese[check];
+        }
+    }
+</script>
