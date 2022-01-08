@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.-->
+<script>
+    let enterIndex=parseInt(prompt("enter the number of element of array"));
+    reverseArray(enterIndex);
+
+    function reverseArray(index) {
+        let numberArray=new Array(index);
+        for(let i=0; i<numberArray.length; i++) {
+            numberArray[i]=parseInt(prompt("enter the element numberArray["+i+"]"));
+        }
+        let first=0;
+        let last=numberArray.length-1;
+        while (first<last) {
+            let temp=numberArray[first];
+            numberArray[first]=numberArray[last];
+            numberArray[last]=temp;
+            first++;
+            last--;
+        }
+        alert("result: " +numberArray);
+    }
+</script>

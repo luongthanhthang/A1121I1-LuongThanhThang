@@ -1,0 +1,36 @@
+<!--Bài 3: Tạo hàm nhận vào hai tham số. -->
+<!--Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai,-->
+<!--hiển thị hộp thoại thông báo cho người dùng.-->
+<!--Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai,-->
+<!--trả về tổng của hai tham số.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="numberOne">Enter the Number One: </label>
+<input type="number" id="numberOne">
+<br>
+<label for="numberTwo">Enter the Number Two: </label>
+<input type="number" id="numberTwo">
+<br>
+<button type="button" onclick="soSanhVaTinhTong()">result</button>
+
+</body>
+</html>
+<script>
+    function soSanhVaTinhTong(number1,number2) {
+        number1=document.getElementById("numberOne").value;
+        number2=document.getElementById("numberTwo").value;
+        if(number1>number2) {
+            alert("number 1 is greater than number 2");
+        } else {
+            number1=parseInt(number1);
+            number2=parseInt(number2);
+            let total= number1+number2;
+            alert("total 2 number is: "+total);
+        }
+    }
+</script>

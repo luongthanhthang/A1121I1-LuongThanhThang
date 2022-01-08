@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let numberOne=parseFloat(prompt("enter number one"));
+    let numberTwo=parseFloat(prompt("enter number two"));
+    let numberThree=parseFloat(prompt("enter number three"));
+    findSmallestNumber(numberOne,numberTwo, numberThree);
+    function findSmallestNumber(a,b,c) {
+        let min=a;
+        if(b<min) {
+            min=b;
+        }
+        if(c<min) {
+            min=c;
+        }
+        alert("Smallest number is: "+min);
+    }
+</script>

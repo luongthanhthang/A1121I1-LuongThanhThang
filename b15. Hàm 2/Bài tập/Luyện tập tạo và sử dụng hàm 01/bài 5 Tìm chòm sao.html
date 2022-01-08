@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            width: 500px;
+            height: 50px;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body onload="let nameStar=prompt('enter the name star'); searchStar()">
+
+</body>
+</html>
+<!--Bài 5: Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao sau:-->
+<!--Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus. -->
+<!--Tạo một mảng khác với bảy phần tử dạng chuỗi có giá trị -->
+<!--là tên các chòm sao tương ứng chứa các ngôi sao: Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major và Leo.-->
+<!--Tiếp theo, tạo một hàm nhận vào một tham số dạng chuỗi duy nhất. -->
+<!--Trong hàm này, duyệt qua mảng thứ nhất để tìm tên ngôi sao. -->
+<!--Nếu tìm thấy, trả lại giá trị tương ứng với chỉ số đó ở mảng thứ hai. -->
+<!--Nói cách khác, trả lại tên chòm sao của ngôi sao đó. -->
+<!--Trong phần <body> của trang web, dùng hộp thoại prompt để người dùng nhập vào tên của ngôi sao,-->
+<!--sau đó gọi hàm với thông tin đầu vào. Đừng quên xử lý trong trường hợp không tìm thấy ngôi sao nào. -->
+<!--Cho kết quả hiển thị trên màn hình.-->
+<script>
+
+    let star=['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let chomSao=[ 'Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function searchStar() {
+         let search=star.indexOf(nameStar);
+            if(search!==-1) {
+            alert("ngôi sao" + star[search] + " thuộc chòm sao: "+chomSao[search]);
+        } else {
+            alert("Không tìm thầy ngôi sao thuộc chòm sao nào");
+        }
+    }
+    </script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được-->
+
+<script>
+    let radiusCircle=parseFloat(prompt("enter the Radius circle cm"));
+    circleArea(radiusCircle);
+    perimeterArea(radiusCircle);
+    // tính diện tích hình tròn
+    function circleArea(radius) {
+        let area=Math.PI*radius*radius;
+        alert("Circle area= "+area+"cm2");
+    }
+
+    // Chu vi hình tròn
+    function perimeterArea(radius) {
+        let perimeter=2*radius*Math.PI;
+        alert("Circle Perimeter= "+perimeter+"cm");
+    }
+
+</script>
+

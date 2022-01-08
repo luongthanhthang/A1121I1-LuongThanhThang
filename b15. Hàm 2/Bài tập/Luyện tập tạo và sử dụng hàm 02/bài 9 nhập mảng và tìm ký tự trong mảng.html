@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,-->
+<!--kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.-->
+<!--Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. -->
+<script>
+    let enterIndex=parseInt(prompt("enter the number of element of array"));
+    let characterArray=new Array(enterIndex);
+    for(let i=0; i<characterArray.length;i++) {
+        characterArray[i]=prompt("enter the element charater array ["+i+"]");
+    }
+    let enterCharater=prompt("enter the charater");
+    findElement(characterArray,enterCharater);
+
+    function findElement(characterArray,charater ) {
+        let count=0;
+        for(let i=0; i<characterArray.length;i++) {
+            if (charater===characterArray[i]) {
+                count++;
+            }
+        }
+        if(count!==0) {
+            alert("count charater of array charater "+count);
+        } else {
+            alert("-1");
+        }
+    }
+</script>
+
