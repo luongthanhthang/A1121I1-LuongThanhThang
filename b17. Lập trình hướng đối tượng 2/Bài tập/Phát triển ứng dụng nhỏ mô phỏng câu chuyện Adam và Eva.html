@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // Viết một lớp lấy tên là Apple, với mỗi quả táo đều có những đặc điểm sau đây:
+    //     + Có khối lượng.
+    //     + Khi tạo ra quả táo đã có khối lượng mặc định là 10 đv.
+    //     + Các đối tượng khác có thể biết được khối lượng của quả táo, nhưng không thay đổi được giá trị này.
+
+    class Apple {
+        constructor() {
+            this.weightApple = 10;
+        }
+
+        //property
+        getWeightApple() {
+            return this.weightApple;
+        }
+
+        //method
+        checkWeightApple() {
+            return this.weightApple;
+        }
+    }
+
+    class Humman {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.message='';
+        }
+        
+        //property
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getMessage() {
+            return this.message;
+        }
+
+        setMessage(message) {
+            this.message = message;
+        }
+
+        //method
+        // nghe và nói
+        listen() {
+            return this.message;
+        }
+
+        talk(otherHuman,message) {
+            otherHuman.setMessage(message);
+        }
+        // kiểm tra khối lượng quả táo
+        checkWeightApple(apple) {
+            return apple.weightApple;
+        }
+
+        // kiểm tra tên, giới tính, cân nặng của người khác
+        checkName(otherHuman) {
+            return otherHuman.name;
+        }
+
+        checkGender(otherHuman) {
+            return otherHuman.gender;
+        }
+
+        checkWeight(otherHuman) {
+            return otherHuman.weight;
+        }
+    }
+
+    class AdamEva extends Humman {
+        // ăn táo
+        eat(apple) {
+            if(apple.weightApple>0) {
+                apple.weightApple--;
+                this.weight++;
+            } else {
+                alert("out of Apple, stop eat");
+            }
+        }
+    }
+
+    let apple=new Apple();
+    let thang=new Humman('Thang', 'male', 60);
+    let adam=new AdamEva('Adam','male',55);
+    let eva=new AdamEva('Eva','famale',45);
+    document.write('Weight Apple initial: '+apple.weightApple+" kg <br>");
+    document.write('Weight Adam initial: '+adam.weight+" kg <br>");
+    document.write('Weight Eva initial: '+eva.weight+" kg <br>");
+    adam.eat(apple);
+    adam.eat(apple);
+    adam.eat(apple);
+    eva.eat(apple);
+    document.write("after eating apple , Thắng check weight Apple: "+thang.checkWeightApple(apple)+" kg <br>");
+    document.write("after eating apple , Thắng check weight Adam: "+thang.checkWeight(adam)+" kg <br>");
+    document.write("after eating apple , Thắng check weight Eva: "+thang.checkWeight(eva)+" kg <br>");
+    adam.talk(eva,'I love you, not Thắng')
+    document.write("Eva listen Adam talk: "+eva.listen()+"<br>");
+    document.write("Thắng check gender Eva: "+thang.checkGender(eva)+"<br>");
+    document.write("Thắng check name Eva: "+thang.checkName(eva)+"<br>");
+</script>

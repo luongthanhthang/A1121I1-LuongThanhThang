@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Viết một lớp các đối tượng hình chữ nhật lấy tên là Rectangle, mỗi hình chữ nhật đều có những đặc tính sau:-->
+
+<!--+ Có thông số chiều dài (int).-->
+<!--+ Có thông số chiều rộng (int).-->
+<!--+ Có tính năng tính diện tích.-->
+<!--+ Có tính năng tính chu vi.-->
+<!--+ Có tính năng hiển thị trực quan hình chữ nhật bằng cách vẽ lên canvas-->
+
+<!--Sử dụng lớp Rectangle vừa định nghĩa để viết một chương trình JavaScript  với kịch bản như sau:-->
+<!--Khai báo và khởi tạo một đối tượng kiểu Rectangle.-->
+<!--Hiển thị hình chữ nhật trên màn hình web-->
+<!--Thay đổi chiều dài và chiều rộng của hình chữ nhật.-->
+<!--In ra màn hình diện tích và chu vi của hình chữ nhật đó.-->
+
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.length=length;
+            this.width=width
+        }
+
+        setLength(length) {
+            this.length=length;
+        }
+
+        setWidth(width) {
+            this.width=width;
+        }
+
+        getLength() {
+            return this.length;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        getPerimeter() {
+            return (this.width+this.length)*2;
+        }
+
+        getArea() {
+            return this.width*this.length;
+        }
+    }
+
+    let rectangle1=new Rectangle();
+    rectangle1.setLength(10);
+    rectangle1.setWidth(5);
+    let perimeter=rectangle1.getPerimeter();
+    let area=rectangle1.getArea();
+    alert("Perimeter is rectangle: "+perimeter);
+    alert("Area is Rectangle: "+area);
+</script>

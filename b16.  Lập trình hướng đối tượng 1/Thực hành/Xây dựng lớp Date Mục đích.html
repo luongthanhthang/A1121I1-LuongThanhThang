@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--//Luyện tập tạo và sử dụng lớp-->
+<!--// Sử dụng cách class-->
+<script>
+    class MyDate {
+        constructor(date, month, year) {
+            this.date=date;
+            this.month=month;
+            this.year=year;
+    }
+
+    setDate(date) {
+            this.date=date;
+    }
+
+    setMonth(month) {
+            this.month=month;
+    }
+
+    setYear(year) {
+            this.year=year;
+    }
+
+    getDate() {
+            return this.date
+    }
+
+    getMonth() {
+            return this.month;
+    }
+
+    getYear() {
+            return this.year;
+    }
+    }
+
+    let date=new MyDate(2,2,2007);
+    let day=date.getDate();
+    let month=date.getMonth();
+    let year=date.getYear();
+
+    alert(day+"/"+month+"/"+year);
+
+
+    // lấy giá trị, mà vẫn bảo mật cho constructor
+
+    // date.setDate(10);
+    // date.setMonth(10);
+    // date.setYear(2009);
+    // alert(day+"/"+month+"/"+year);
+
+
+</script>
+

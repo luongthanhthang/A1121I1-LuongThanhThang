@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn-->
+<script>
+    class SwitchButton {
+        constructor(status, lamp) {
+            this.status = status;
+            this.lamp=lamp;
+        }
+
+        //property
+        setStatus(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setLamp(lamp) {
+            this.lamp=lamp;
+        }
+
+        getLamp() {
+            return this.lamp;
+        }
+
+        //method
+        connectToLamp(lamp) {
+            lamp.setConnect(true);
+        }
+
+        switchOn() {
+            this.setStatus(true);
+        }
+
+        switchOff() {
+            this.setStatus(false);
+        }
+    }
+
+    class ElectricLamp {
+        constructor(status) {
+            this.status=status;
+            this.connect=false;
+        }
+
+        //property
+        setStatus(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setConnect(connect) {
+            this.connect=connect;
+        }
+        getConnect() {
+            return this.connect;
+        }
+
+        //method
+        turnOn(switch1) {
+            if(this.connect && switch1.getStatus()) {
+                this.setStatus(true);
+                } else {
+                alert("Please connect Switch to Lamp and turn on switch");
+            }
+    }
+    turnOff(switch1) {
+        if(!this.connect || !switch1.getStatus()) {
+            this.setStatus(false);
+        }
+    }
+
+        }
+
+    let switchButton=new SwitchButton(false, 'ElectricLamp');
+    let lamp= new ElectricLamp(false);
+    switchButton.connectToLamp(lamp);
+
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    switchButton.switchOn();
+    switchButton.switchOff();
+    lamp.turnOn(switchButton);
+
+    alert("Now status of lamp: " +lamp.getStatus());
+
+</script>

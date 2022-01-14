@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Mobile {
+        constructor(status, batteryPercent, messageDraft, messageInbox, messageSent) {
+            this.messageSent=messageSent;
+            this.status = status;
+            this.batteryPercent = batteryPercent;
+            this.messageDraft = messageDraft;
+            this.messageInbox = messageInbox;
+            this.messageSent = messageSent;
+        }
+        //propety
+        // setter, getter
+
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        getBatteryPercent() {
+            alert("Phần trăm pin "+this.batteryPercent);
+        }
+
+        setBatteryPercent(batteryPercent) {
+            this.batteryPercent = batteryPercent;
+        }
+
+        getMessageDraft() {
+            return this.messageDraft;
+        }
+
+        setMessageDraft(messageDraft) {
+            this.messageDraft = messageDraft;
+        }
+
+        getMessageInbox() {
+            return this.messageInbox;
+        }
+
+        setMessageInbox(messageInbox) {
+            this.messageInbox = messageInbox;
+        }
+
+        getMessageSent() {
+            return this.messageSent;
+        }
+
+        setMessageSent(messageSent) {
+            this.messageSent =messageSent;
+        }
+
+        //method
+        // check điện thoại bật hay tắt
+        showStatus() {
+           if(this.status) {
+               document.write("Mobile turn on");
+           } else {
+               document.write("Mobile turn off");
+           }
+        }
+
+        //khi điện thoại bật
+        turnOn() {
+            this.setStatus(true);
+        }
+
+        //khi điện thoại tắt
+        turnOff() {
+            this.status(false);
+        }
+
+        //sạc pin điện thoại
+        chargeBattery() {
+            document.write("change... <br>");
+            this.setBatteryPercent(99);
+        }
+
+        //Viết tin nhắn
+        writeMessage(messageText) {
+            if(this.status) {
+                this.messageDraft.unshift(messageText);
+                this.batteryPercent--;
+            } else {
+                alert("Please turn on Moblie");
+            }
+        }
+
+        //Nhận tin nhắn, khi điện thoại tắt vẫn nhận được tin nhắn
+        receiveMessage(messageText) {
+            this.messageInbox.push(messageText);
+            this.batteryPercent--;
+        }
+
+        //gửi tin nhắn
+        sendMessage(otherMobile) {
+            if(this.status) {
+                let messageText=this.messageDraft.shift();
+                otherMobile.receiveMessage(messageText);
+                this.messageSent.push(messageText);
+                this.batteryPercent--;
+            } else {
+                alert("Please turn on mobile");
+            }
+        }
+
+        //Kiểm tra họp thư đến
+        displayMessageInbox() {
+            if(this.status) {
+                document.write("message inbox"+"<br>");
+               for(let i=0; i<this.messageInbox.length; i++) {
+                   document.write(i+1+"."+this.messageInbox[i]+"<br>");
+                   this.batteryPercent--;
+               }
+            } else {
+                alert("Please turn on mobile");
+            }
+        }
+
+        //Kiểm tra họp thứ đã gửi
+        displayMessageSent() {
+            if(this.status) {
+                document.write("message sent"+"<br>");
+                for(let i=0; i<this.messageSent.length; i++) {
+                    document.write(i+1+"."+this.messageSent[i]+"<br>");
+                    this.batteryPercent--;
+                }
+            } else {
+                alert("Please turn on mobile");
+            }
+        }
+    }
+
+    //demo
+    let samsung=new Mobile(false,50,[],[],[]);
+    let iphone=new Mobile(false,15,[],[],[]);
+    samsung.turnOn();
+    iphone.turnOn();
+    let messageText=prompt("Enter the message ");
+    samsung.writeMessage(messageText);
+    samsung.sendMessage(iphone);
+    document.write("iphone");
+    iphone.displayMessageInbox();
+    document.write("samsung");
+    samsung.displayMessageSent();
+    iphone.getBatteryPercent();
+    samsung.getBatteryPercent();
+</script>

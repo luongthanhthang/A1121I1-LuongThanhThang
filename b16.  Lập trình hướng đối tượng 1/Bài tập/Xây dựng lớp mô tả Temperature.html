@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<!--Viết một lớp các đối tượng mô tả loại dữ liệu nhiệt độ lấy tên là Temperature. Các thông số mô tả cho nhiệt độ gồm:-->
+<!--Trị số tính theo đơn vị độ C (giá trị nhỏ nhất -273 độ)-->
+<!--Có tính năng chuyển đổi từ độ C sang độ F.-->
+<!--Có tính năng chuyển đổi từ độ C sang độ Kenvin.-->
+
+<!--Sử dụng lớp vừa định nghĩa để xây dựng một chương trình JavaScript với kịch bản như sau:-->
+<!--Khởi tạo một đối tượng Temperature.-->
+<!--Gán giá trị độ C cho đối tượng ở nhiệt độ 25 độ.-->
+<!--Hiển thị ra màn hình nhiệt độ F và độ Kenvin tương ứng.-->
+<script>
+class Temperature {
+    constructor(C) {
+        this.C=C;
+    }
+
+    setC(C) {
+        this.C=C;
+    }
+
+    getC() {
+        return this.C;
+
+    }
+
+    cToF() {
+        return this.C*33.8;
+    }
+
+    cToK() {
+        return this.C*274.15;
+    }
+}
+
+let enterC;
+do {
+     enterC=parseFloat(prompt("enter the C"));
+} while (enterC<-273);
+let temperature=new Temperature();
+temperature.setC(enterC);
+let C=temperature.getC();
+let fahrenheit=temperature.cToF();
+let kenvin=temperature.cToK();
+document.write(C+ " C to faharenheit: "+fahrenheit+"F");
+document.write("<br>"+C+ " C to kenvin: "+kenvin+"K");
+</script>

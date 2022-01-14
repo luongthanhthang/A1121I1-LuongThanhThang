@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid #d3d3d3;"></canvas>
+</body>
+</html>
+<!--Phát triển một ứng dụng đơn giản với các hình tròn với nhiều hiệu ứng khác nhau.-->
+<!--Ứng dụng này được phát triển theo từng cấp độ (tương ứng với từng bước) đi từ dễ đến khó.-->
+<script>
+    class Circle {
+        constructor(x,y,radius) {
+            this.x=x;
+            this.y=y;
+            this.radius=radius;
+        }
+
+        setX(x) {
+            this.x=x;
+        }
+        setY(y) {
+            this.y=y;
+        }
+        setRadius(radius) {
+            this.radius=radius;
+        }
+
+        getX(){
+            return this.x;
+        }
+        getY(){
+            return this.y;
+        }
+        getRadius(){
+            return this.radius;
+        }
+    }
+    
+    function getRandomHex() {
+        return Math.floor(Math.random()*255);
+    }
+//random màu
+    function getRandomColor() {
+        let red=getRandomHex();
+        let green=getRandomHex();
+        let blue=getRandomHex();
+        return "rgb("+red+","+blue+","+green+")";
+    }
+    
+    function createCircle() {
+        let ctx=document.getElementById("myCanvas").getContext("2d");
+        let radius=Math.floor(Math.random()*80);
+        let circle=new Circle();
+        // random vị trí ảnh
+        let x=Math.random()*window.innerWidth;
+        let y=Math.random()*window.innerHeight;
+        circle.setX(x);
+        circle.setY(y);
+        circle.setRadius(radius);
+        // random màu và vẽ
+        ctx.beginPath();
+        ctx.arc(circle.getX(), circle.getY(), circle.getRadius(),0,2*Math.PI);
+        ctx.fillStyle=getRandomColor();
+        ctx.fill();
+    }
+
+    // vẽ nhiều hình tròn
+    function createMultipleCircle() {
+        for (let i=0; i<30; i++) {
+            createCircle();
+        }
+    }
+
+    createMultipleCircle();
+</script>
