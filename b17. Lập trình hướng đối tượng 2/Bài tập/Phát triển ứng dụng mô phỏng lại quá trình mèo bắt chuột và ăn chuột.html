@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // <!--Viết một lớp mô tả đối tượng chuột lấy tên là Rat, với những đặc điểm được mô tả như sau:-->
+    //     <!--Có thuộc tính tên.-->
+    //     <!--Có thuộc tính khối lượng.-->
+    //     <!--Có thuộc tính tốc độ.-->
+    //     <!--Có thuộc tính mô tả trạng thái: sống, chết.-->
+    //     <!--Có khả năng thực hiện hành vi kêu (ví dụ “chít, chít”)-->
+    class Rat {
+        constructor(name, weight, speed, live) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.live = live;
+        }
+
+        //Property
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            document.write(this.name+" weight "+this.weight+" kg <br>");
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getSpeed() {
+            return this.speed;
+        }
+
+        setSpeed(speed) {
+            this.speed = speed;
+        }
+
+        getLive() {
+            return this.live;
+        }
+
+        setLive(live) {
+            this.live = live;
+        }
+
+        //Method
+        talk() {
+            if (this.live) {
+                document.write(this.name + " TALK: CHÍT CHÍT  <br>");
+            } else {
+                document.write(this.name + " DIE, NOT CHÍT CHÍT  <br>");
+            }
+        }
+    }
+
+    <!--Viết một lớp mô tả đối tượng mèo lấy tên là Cat với những đặc điểm được mô tả như sau:-->
+    <!--Có thuộc tính tên.-->
+    <!--Có thuộc tính khối lượng.-->
+    <!--Có thuộc tính tốc độ di chuyển tối đa.-->
+    <!--Có khả năng thực hiện hành vi kêu (ví dụ: “meo meo”).-->
+    <!--Có khả năng bắt chuột, mỗi lần chỉ bắt được một con. Chỉ bắt được chuột khi tốc độ của mèo lớn hơn tốc độ của chuột.-->
+    <!--Có khả năng ăn thịt chuột. Chỉ ăn chuột còn sống. Khi ăn, khối lượng của mèo tăng lên tương ứng.-->
+
+    class Cat {
+        constructor(name, weight, maxSpeed) {
+            this.name = name;
+            this.weight = weight;
+            this.maxSpeed = maxSpeed;
+        }
+
+        //Property
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            document.write(this.name+" weight "+this.weight+" kg <br>");
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getMaxSpeed() {
+            return this.maxSpeed;
+        }
+
+        setMaxSpeed(maxSpeed) {
+            this.maxSpeed = maxSpeed;
+        }
+
+        //method
+
+        talk() {
+            document.write(this.name + " TALK: NGAO NGAO! MÈO MÉO MEO MÈO MEO! <br>");
+        }
+
+        catch(rat) {
+            if(this.maxSpeed>rat.speed) {
+                document.write(this.name+" CAUGHT " + rat.name+ " , "+rat.name+" NOT DIE! <br>");
+            } else {
+                document.write(rat.name+" EXIT! <br>");
+            }
+        }
+
+        eat(rat) {
+            if(this.maxSpeed>rat.speed && rat.live) {
+                document.write(this.name+" EAT "+rat.name+"<br>");
+                if(rat.weight>0) {
+                    rat.weight--;
+                    this.weight++;
+                }
+                if(rat.weight===0) {
+                    document.write(rat.name+" DIE! <br>");
+                    rat.live=false;
+                }
+            } else {
+                document.write(this.name+" doesn't eat "+rat.name+" "+this.name+" HUHU! <br>");
+            }
+        }
+    }
+
+    let jerry= new Rat("Jerry", 2, 10, true);
+    let tom= new Cat("Tom", 5, 12);
+    jerry.getWeight();
+    tom.getWeight();
+    jerry.talk();
+    tom.talk();
+    tom.catch(jerry);
+    tom.eat(jerry);
+    tom.eat(jerry);
+    jerry.getWeight();
+    tom.getWeight();
+    jerry.talk();
+</script>

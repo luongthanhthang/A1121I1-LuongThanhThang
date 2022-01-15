@@ -9,6 +9,13 @@
 </body>
 </html>
 <script>
+    // Bước 1: Sao chép dự án có sẵn từ GitHub: https://github.com/codegym-vn/objects
+    //
+    //     Bước 2: Chạy ứng dụng và chỉnh sửa:
+    //
+    //     Thay thế ảnh nhân vật bằng một ảnh khác
+    // Thêm thuộc tính speed (tốc độ) cho đối tượng Hero (tốc độ hiện tại đang được để cố định là 20)
+    // Viết thêm các hàm để nhân vật có thể di chuyển xung quanh màn hình
     /**
      * Created by nhatnk on 4/26/17.
      */
@@ -30,31 +37,36 @@
         }
 
         moveRight(){
-            this.left += this.speed;
+            this.left += this.speed*Math.random();
             console.log('ok: ' + this.left);
         }
 
         moveDown(){
-            this.top += this.speed;
-            console.log('ok: ' + this.left);
+            this.top += this.speed*Math.random();
         }
 
+        moveLeft(){
+            this.left -= this.speed*Math.random();
+        }
+
+        moveUp() {
+            this.top-=this.speed*Math.random();
+        }
     }
 
     let hero = new Hero('riven.png', 20, 30, 250, 20);
 
-    function startMoveRight(){
+    function start(){
         if(hero.left < window.innerWidth - hero.size){
             hero.moveRight();
+            hero.moveRight();
+            hero.moveDown();
+            hero.moveDown();
+            hero.moveLeft();
+            hero.moveUp();
         }
         document.getElementById('game').innerHTML = hero.getHeroElement();
-        setTimeout(startMoveRight, 500)
+        setTimeout(start, 200)
     }
-    
-    function startMoveTop() {
-        if (hero)
-    }
-
-
-    startMoveRight();
+    start();
 </script>
