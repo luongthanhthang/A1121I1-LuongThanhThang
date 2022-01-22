@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Bài 1: Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu không -->
+<!--có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa. Ví dụ tRuong    TaN   HAI => Truong Tan Hai.-->
+<!--Và một hàm tìm từ dài nhất trong 1 xâu ký tự. Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím,-->
+<!--in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.-->
+<script>
+    // nhập chuỗi
+    let enterString=prompt("enter the string: ");
+    document.write("từ trước khi chuẩn hoá "+enterString+"<br>");
+    let arrInput=enterString.split('');
+
+    // bỏ các 'dấu cách' liên tiếp nhau
+    for (let i=0; i<arrInput.length; i++) {
+        if(arrInput[0]==" ") {
+            arrInput.splice(0,1);
+        }
+        if(arrInput[i]==" ") {
+            if(arrInput[i]==arrInput[i-1]) {
+                arrInput.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    // Viết lại tên cho đúng chuẩn
+    text="";
+    let result=arrInput.join("");
+    text+=result[0].toUpperCase();
+    for(let i=1; i<result.length; i++) {
+        if(result[i]==" ") {
+            text+=" ";
+            text+=result[i+1].toUpperCase();
+            i++;
+        } else {
+            text+=result[i].toLowerCase();
+        }
+    }
+
+    // hiển thị kết quả
+    document.write("tên khi chỉnh sửa đúng: "+text+"<br>");
+
+    //tìm từ dài nhất
+    let arrOutput=text.split(" ");
+    let max=arrOutput[0].length;         // độ dài cũng từng chữ trong tên
+    for(let i=1; i<arrOutput.length; i++) {
+        if(arrOutput[i].length>max) {
+            max=arrOutput[i].length;
+        }
+    }
+
+    // trường hợp có nhiều chữ có độ dài bằng nhau và xuất kết quả
+    for(let i=0; i<arrOutput.length; i++) {
+        if(arrOutput[i].length==max) {
+            document.write("chữ dài nhất trong tên thứ ["+i+"]"+arrOutput[i]+"<br>");
+        }
+    }
+</script>

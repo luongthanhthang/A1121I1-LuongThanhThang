@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
+<script>
+    // khởi tạo mảng 2 chiều
+    let row=parseInt(prompt("enter the number of row"));
+    let col=parseInt(prompt("enter the number of col"));
+    let myArr=new Array(row);
+    for(let row=0; row<myArr.length; row++) {
+        myArr[row]=new Array(col);
+        for(let col=0; col<myArr[row].length; col++) {
+            let value=parseInt(prompt("enter the element of arr ["+row+"] ["+col+"]"));
+            myArr[row][col]=value;
+        }
+    }
+
+    //Xuất ma trận 2 chiều:
+    for(let row=0; row<myArr.length; row++) {
+        for (let col = 0; col < myArr[row].length; col++) {
+            document.write(myArr[row][col] + "<br>");
+        }
+        document.write("<br>");
+    }
+    console.log(myArr);
+
+    // hàm liệt kê số nguyên tố của mảng 2 chiều và đếm số nguyên tố
+    let count=0;
+    let totalSoNguyenTo=0;
+    let result="những số nguyên tố trong ma trận là: ";
+    function countSoNguyenTo(arr) {
+        for(let row=0; row<arr.length; row++) {
+            for (let col = 0; col < arr[row].length; col++) {
+                // loại những số nhỏ hơn 2
+                if(arr[row][col]<=2) {
+                    continue;
+                }
+                // xét số nguyên tố bắt đầu từ số 2;
+                for (let i=2; i<arr[row][col]; i++) {
+                    if(arr[row][col]%i==0) {
+                        count++;
+                    }
+                }
+                if(count==0) {
+                    result+=arr[row][col]+"<br>";
+                    totalSoNguyenTo++;
+                }
+                count=0;
+            }
+        }
+    }
+
+    countSoNguyenTo(myArr);
+    document.write(result+"<br>");
+    document.write("tổng số nguyên tố trong mảng là: "+totalSoNguyenTo);
+
+</script>

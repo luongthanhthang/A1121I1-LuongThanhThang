@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Bài 3: Cho một danh sách các phân số, hãy tìm chỉ số của phân số lớn nhất (đếm từ 0)-->
+<!--Giả định rằng không có các phân số bằng nhau trong tập đầu vào-->
+<!--Ví dụ: numerators = [5, 2, 5] và denominators = [6, 3, 4], -->
+<!--thì kết quả maxFraction(numerators, denominators) = 2.-->
+<!--⇨	5/4 là phân số lớn nhất, có chỉ số là 2.-->
+<script>
+    let numberFraction=parseInt(prompt("enter the number of fraction"));
+    let numerators=new Array(numberFraction);
+    let denominators=new Array(numberFraction);
+    // nhập tử và mẫu của phân số
+    for(let i=0; i<numberFraction; i++) {
+        numerators[i]=parseInt(prompt("enter the numerators ["+i+"]"));
+        denominators[i]=parseInt(prompt("enter the denominators ["+i+"]"));
+    }
+    document.write("numerators array: "+numerators+"<br>");
+    document.write("denominators array: "+denominators+"<br>");
+    // so sánh 2 phân số
+    let max=numerators[0]/denominators[0];
+    let count=0;
+    for(let i=1; i<numberFraction; i++) {
+        if ((numerators[i]/denominators[i])>max) {
+            max=numerators[i]/numerators[i];
+            count=i;
+        }
+    }
+    document.write("Fraction max is: "+numerators[count]+"/"+denominators[count]+"<br>");
+    document.write("index Fraction max: "+count);
+</script>

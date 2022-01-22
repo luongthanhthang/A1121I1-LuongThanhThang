@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ.-->
+<!--Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.-->
+<script>
+    let enterNumber=parseInt(prompt("enter the number from 1 to 10"));
+    let number=[1,2,3,4,5,6,7,8,9,10];
+    let character=["một","hai","ba","bốn","năm","sáu","bảy","tám","chín"];
+    let index=number.indexOf(enterNumber);
+    if(index===-1) {
+        alert("don't find number");
+    } else {
+        alert("number "+number[index]+" to character: "+character[index]);
+    }
+</script>

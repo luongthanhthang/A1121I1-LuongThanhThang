@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!--Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.-->
+<!--Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.-->
+<!--⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.-->
+<script>
+    let inputString1=prompt("enter the string 1");
+    let inputString2=prompt("enter the string 2");
+    let result=[];
+    document.write("string 1: "+inputString1+"<br>");
+    document.write("string 2: "+inputString2+"<br>");
+    let arr1=inputString1.split('');
+    let arr2=inputString2.split('');
+    let check;
+    let count=0;
+    for(let i=0; i<arr1.length; i++) {
+        check=arr2.indexOf(arr1[i]);
+        if (check!==-1) {
+            result+=arr2[check];
+            arr2.splice(check,1);
+            count++;
+        }
+    }
+    document.write("số ký tự khác nhau là: "+count+"<br>");
+    document.write("Và đó là các ký tự: "+result);
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<!--Bài 2: Vẽ tam giác vuông cân rỗng có chiều cao h. Ví dụ: h = 5-->
+<!--*-->
+<!--* *-->
+<!--*    *-->
+<!--*       *-->
+<!--* * * * * *-->
+
+<script>
+    let h=parseInt(prompt("enter the height of isosceles right-angled triangle: "));
+    for (let i=1; i<=h; i++) {
+        for(let j=1; j<=i; j++) {
+            if (i!==h) {
+                if (j === 1 || j === i) {
+                    document.write(" *");
+                } else {
+                    document.write("&nbsp; &nbsp;");
+                }
+            } else {
+                document.write("* ");
+            }
+        }
+        document.write("<br>");
+    }
+
+
+</script>

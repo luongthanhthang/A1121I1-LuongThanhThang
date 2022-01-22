@@ -1,0 +1,82 @@
+<!--Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:-->
+<!--Cafe-->
+<!--Cam vắt-->
+<!--Nước ép cà rốt-->
+<!--Nước ép cà chua-->
+<!--Nước lọc-->
+<!--Nước dừa-->
+<!--Viết một chương trình gọi thức uống đơn giản.-->
+<!--Gợi ý: Trước tiên in ra màn hinh danh sách các loại thức uống cho người dùng chọn lựa-->
+<!--Đánh dấu theo thứ tự 1 (cafe), 2 (cam vắt), 3(nước ép cà rốt), 4(nước ép cà chua), 5(nước lọc), -->
+<!--6(nước dừa), 7(thoát gọi món)-->
+<!--Khi người dùng lựa chọn 1 trong số các thức uống, chương trình sẽ hiện đơn giá của thức uống đó-->
+<!--và cho phép người dùng nhập số lượng. Cuối cùng hiển thị tổng số tiền người dùng cần phải trả.-->
+<!--Sử dụng vòng lặp do while lặp lại cho người dùng đặt thức uống,
+kết thúc quá trình đặt thức uống khi người nhấn số 7-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<ol>
+    <li><button type="button" onclick="gioHang('cafe',7000)">Cafe</button></li>
+    <li><button type="button" onclick="gioHang('camVat',20000)">Cam vắt</button></li>
+    <li><button type="button" onclick="gioHang('caRot',25000)">Nước ép cà rốt</button></li>
+    <li><button type="button" onclick="gioHang('caChua',25000)">Nước ép cà chua</button></li>
+    <li><button type="button" onclick="gioHang('nuocLoc',7000)">Nước lọc</button></li>
+    <li><button type="button" onclick="gioHang('nuocDua',30000)">Nước Dừa</button></li>
+    <li><button type="button" onclick="tinhTien()">Thoát gọi món</button></li>
+</ol>
+</body>
+</html>
+<!--nhập đồ uống và hiển thị giá -->
+<script>
+    let total=0
+    let numberWater;
+    function gioHang(doUong,cost) {
+        switch (doUong) {
+            case 'cafe':
+                numberWater=parseInt(prompt("Cost a cafe: "+cost+ " Enter number of cafe: "));
+                total+=cost*numberWater;
+                break;
+
+            case 'camVat':
+                numberWater=parseInt(prompt("Cost a cam vắt: "+cost+ " Enter number of cam vắt: "));
+                total+=cost*numberWater;
+                break;
+
+            case 'caRot':
+                numberWater=parseInt(prompt("Cost a nước ép cà rốt: "+cost+ " Enter number of nước ép cà rốt: "));
+                total+=cost*numberWater;
+                break;
+
+            case 'caChua':
+                numberWater=parseInt(prompt("Cost a nước ép cà chua : "+cost+ " Enter number of nước ép cà chua: "));
+                total+=cost*numberWater;
+                break;
+
+            case 'nuocLoc':
+                numberWater=parseInt(prompt("Cost a nước lọc : "+cost+ " Enter number of nước lọc: "));
+                total+=cost*numberWater;
+                break;
+
+            case 'nuocDua':
+                numberWater=parseInt(prompt("Cost a nước dừa: "+cost+ " Enter number of nước dừa: "));
+                total+=cost*numberWater;
+                break;
+        }
+    }
+
+    // tính tiền
+    function tinhTien() {
+        alert("total money water: "+total+"VND");
+        total=0;
+    }
+</script>

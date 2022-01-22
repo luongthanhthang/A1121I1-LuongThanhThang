@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<!--Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều-->
+<script>
+    // khởi tạo mảng 2 chiều
+    let row=parseInt(prompt("enter the number of row"));
+    let col=parseInt(prompt("enter the number of col"));
+    let myArr=new Array(row);
+    for(let row=0; row<myArr.length; row++) {
+        myArr[row]=new Array(col);
+        for(let col=0; col<myArr[row].length; col++) {
+            let value=parseInt(prompt("enter the element of arr ["+row+"] ["+col+"]"));
+            myArr[row][col]=value;
+        }
+    }
+
+    //Xuất ma trận 2 chiều:
+    for(let row=0; row<myArr.length; row++) {
+        for (let col = 0; col < myArr[row].length; col++) {
+            document.write(myArr[row][col] + "<br>");
+        }
+        document.write("<br>");
+    }
+
+    //hàm tìm số nhỏ nhất và lớn nhất mảng 2 chiều
+    function findMinMaxArray(arr) {
+        let max=arr[0][0];
+        let min=arr[0][0];
+        for(let row=0; row<arr.length; row++) {
+            for (let col = 0; col < arr[row].length; col++) {
+                if(arr[row][col]===arr[0][0]) {
+                    continue;
+                }
+                //tìm max của mảng
+                if(arr[row][col]>max) {
+                    max=arr[row][col];
+                }
+
+                // tìm min của mảng
+                if(arr[row][col]<min) {
+                    min=arr[row][col];
+                }
+            }
+        }
+        document.write("max of array: "+max+"<br>");
+        document.write("min of array: "+min+"<br>");
+    }
+
+    findMinMaxArray(myArr);
+</script>
